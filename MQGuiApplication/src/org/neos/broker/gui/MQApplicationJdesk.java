@@ -20,7 +20,7 @@ import org.neos.broker.gui.tree.NodeGui;
 import org.neos.broker.gui.tree.TreeMouseAdapter;
 
 /**
- *
+ * Esta es una prueba de Mario
  * @author neossoftware
  */
 public class MQApplicationJdesk extends javax.swing.JFrame {
