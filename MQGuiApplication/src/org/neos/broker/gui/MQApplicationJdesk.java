@@ -24,7 +24,7 @@ import org.neos.broker.gui.tree.TreeMouseAdapter;
  * @author neossoftware
  */
 public class MQApplicationJdesk extends javax.swing.JFrame {
-
+     /*frame principal*/
       private NewDialogConn frame;
 
     /**
