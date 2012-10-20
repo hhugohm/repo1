@@ -213,14 +213,14 @@ public class MQApplicationJdesk extends javax.swing.JFrame {
     public void populateValues(JTree arbol) {
         modelo =(DefaultTreeModel)arbol.getModel();
        
-        NodeGui raiz = new NodeGui<>("Conexiones", true, createImageIcon("discovery.gif", "", DemoTree.class));
+        NodeGui<String> raiz = new NodeGui<String>("Conexiones", true, createImageIcon("discovery.gif", "", DemoTree.class));
           
         modelo.setRoot(raiz);         
-        NodeGui<String> rama = new NodeGui<>("interfaz Hogan", true,createImageIcon("plugin.gif", "", DemoTree.class) );
+        NodeGui<String> rama = new NodeGui<String>("interfaz Hogan", true,createImageIcon("plugin.gif", "", DemoTree.class) );
         
         //se crean nodos
-        NodeGui<String> nodo1 = new NodeGui<>("Mensaje1",false); 
-        NodeGui<String> nodo2 = new NodeGui<>("Mensaje2",false); 
+        NodeGui<String> nodo1 = new NodeGui<String>("Mensaje1",false); 
+        NodeGui<String> nodo2 = new NodeGui<String>("Mensaje2",false); 
         rama.add(nodo1);
         rama.add(nodo2);
         
