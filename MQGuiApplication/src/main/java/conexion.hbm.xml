@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.neos.broker.domain">
+
+	<class name="Conexion" table="TC_CONEXION">
+		<id name="idConexion" column="ID_CONEXION">
+			
+		</id>
+		<property name="tipoAmbiente" type="string" column="TIPO_AMBIENTE"
+			                                     not-null="true" length="50" />
+			                                     
+		<property name="host" type="string" column="HOST" not-null="true"
+			                                     length="100" />
+			                                     
+		<property name="qManager" type="string" column="QMANAGER"
+			                                     not-null="true" length="100" />
+			
+		<property name="qPut" type="string" column="QPUT" not-null="true"
+			                                     length="100" />
+			                                     
+		<property name="qGet" type="string" column="QGET" not-null="true"
+                                                 length="100" />	                                     
+			                                     
+			                                     
+			                                     
+		<property name="qPort" type="integer" column="QPORT"
+			                                     not-null="true" />
+			                                     
+		<property name="qChanel" type="string" column="QCHANEL"
+			                                     not-null="true" length="100" />
+			                                     
+		<property name="fechaAlta" type="date" column="FECHA_ALTA"
+			                                     not-null="true" />
+			                                     
+		<property name="bndSecurity" type="integer" column="BND_SECURITY"
+			                                     not-null="true" />
+
+        
+    <many-to-one name="usuario"  class="org.neos.broker.domain.Usuario" column="ID_USUARIO" 
+        fetch="join" not-null="true" cascade="all" insert="true" />
+    
+     <set name="mensaje" fetch="join"  >
+            <key column="ID_CONEXION"   />
+            <one-to-many class="org.neos.broker.domain.Mensaje"   />
+      </set>
+    
+
+	</class>
+        
+
+</hibernate-mapping>

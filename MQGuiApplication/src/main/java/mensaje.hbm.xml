@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="org.neos.broker.domain">
+ 
+ <!-- batch cuando se hace la relacion se trae de una sola vez la info -->
+    <class name="Mensaje" table="TW_MENSAJE" batch-size="50" >
+        <id name="idMensaje" column="ID_MENSAJE"   >
+            <generator class="native"/>
+        </id>
+        <property name="tituloMensaje" type="string" column="TITULO_MENSAJE" not-null="true" length="50"  />
+        <property name="requestMensaje" type="string" column="REQUEST_MESSAGE" not-null="true" length="5000"  />
+        <property name="responseMensaje" type="string" column="RESPONSE_MESSAGE" not-null="true" length="5000"  />
+        
+        <many-to-one name="conexion"  class="org.neos.broker.domain.Conexion"
+            fetch="join" lazy="false">
+            <column name="ID_CONEXION" not-null="true" />
+        </many-to-one>
+   
+    </class>
+ 
+</hibernate-mapping>
